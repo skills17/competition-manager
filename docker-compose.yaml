@@ -1,0 +1,8 @@
+version: '3'
+services:
+  competition-manager:
+    image: skills17/competition-manager
+    ports:
+      - "127.0.0.1:9999:9999"
+    volumes:
+      - ./competitions:/app/data/
