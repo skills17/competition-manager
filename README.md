@@ -20,6 +20,14 @@ resolve it or contact the organizers.__
 
 ## Instructions
 
+__Quick Start__:
+```bash
+git clone git@github.com:skills17/competition-manager.git
+docker compose up -d
+open http://localhost:9999
+```
+
+
 ### 1. Installation
 
 1. Install Docker if you haven't already. We recommend [Docker Desktop](https://docs.docker.com/get-docker/).
