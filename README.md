@@ -23,6 +23,7 @@ resolve it or contact the organizers.__
 __Quick Start__:
 ```bash
 git clone git@github.com:skills17/competition-manager.git
+cd competition-manager
 docker compose up -d
 open http://localhost:9999
 ```
