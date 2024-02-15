@@ -99,3 +99,12 @@ solution.
 ### 6. Stop the environment
 
 The containers are running in the background. You can stop them with `docker compose down` while being in the directory.
+
+## Troubleshooting
+
+Got an issue?
+
+1. Check if it is listed here [TROUBLESHOOTING.md](TROUBLESHOOTING.md).
+2. Check if someone else already had the same issue on the GitHub repository: [Issues](https://github.com/skills17/competition-manager/issues
+
+Still stuck? Create an issue on this GitHub repository here: [Create Issue](https://github.com/skills17/competition-manager/issues/new)
