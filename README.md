@@ -2,6 +2,7 @@
 
 Competition environment for competitors.
 
+
 - Are you planning to take part in a competition in Web Technologies — Skill 17?
 - Did the organizers of the competition provide you with a link to this repository?
 
@@ -19,6 +20,10 @@ Please go through these instructions and verify your setup before the competitio
 - __Make sure you test your setup in the same network as you will be doing for the actual competition. School or
   corporate networks might cause proxy issues.__
 - In case there is an issue, you have time to resolve it or contact the organizers.
+
+## Screenshot of Competition Manager
+
+[![Screenshot](screenshot.png)](screenshot.png)
 
 ## Instructions
 
