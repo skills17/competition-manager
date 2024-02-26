@@ -112,9 +112,6 @@ Submissions after the deadline, that was communicated to you by the organizers, 
 To submit your solution, open a browser and navigate to [http://localhost:9999](http://localhost:9999). Select the
 competition you want to upload your solution to and click on `Submit`.
 
-To verify that your solution has been submitted, you can check the separate URL that is displayed after submitting your
-solution.
-
 ### 6. Stop the environment
 
 The containers are running in the background. You can stop them with `docker compose down` while being in the directory.
