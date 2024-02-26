@@ -1,2 +1,5 @@
 competitions/encrypted/
 competitions/workspace/
+.code/
+.idea/
+*.iml
