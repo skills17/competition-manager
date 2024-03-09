@@ -48,6 +48,23 @@ Make sure you enabled
 
 This is required to run Node.js and PHP commands. Otherwise, you might encounter `EPERM` errors.
 
+## I'm getting a `Permission denied` error when downloading/decrypting the tasks and I'm on Linux/MacOS
+
+__Issue:__
+
+The user and group of your host and Docker container probably mismatch. Therefore, the Docker container user doesn't have the permission to write to your `competitions/` directory.
+
+__Solution:__
+
+Get your user and group ID by running `id` in your terminal. You need to tell docker to use these IDs by adding them to the `docker-compose.yml` at the `competitions-manager` level. Replace `1000:1000` with your UID and GID respectively.
+
+```yml
+        ...
+        volumes:
+            - ./competitions:/app/data/
+        user: "1000:1000"
+```
+
 ## Still having issues?
 
 1. Check if someone else already had the same issue on the GitHub repository:
