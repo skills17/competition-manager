@@ -56,7 +56,7 @@ The user and group of your host and Docker container probably mismatch. Therefor
 
 __Solution:__
 
-Get your user and group ID by running `id` in your terminal. You need to tell docker to use these IDs by adding them to the `docker-compose.yml` at the `competitions-manager` level. Replace `1000:1000` with your UID and GID respectively.
+Get your user and group ID by running `id` in your terminal. You need to let Docker know about these IDs by adding them to the `docker-compose.yaml` file at the `competitions-manager` level. Replace `1000:1000` with your UID and GID respectively.
 
 ```yml
         ...
