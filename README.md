@@ -45,7 +45,9 @@ open http://localhost:9999
     1. Install [PHP](https://www.php.net/downloads.php) or use a package manager like Homebrew on macOS or
        Chocolatey on Windows.
     2. Install [Composer](https://getcomposer.org/download/).
-5. Clone this repository: `git clone git@github.com:skills17/competition-manager.git`
+5. Clone this repository:
+   - Via SSH: `git clone git@github.com:skills17/competition-manager.git` (recommended)
+   - Via HTTPS: `git clone https://github.com/skills17/competition-manager.git`
 
 Hints:
 
