@@ -48,7 +48,7 @@ Make sure you enabled
 
 This is required to run Node.js and PHP commands. Otherwise, you might encounter `EPERM` errors.
 
-## I'm getting a `Permission denied` error when downloading/decrypting the tasks and I'm on Linux/MacOS
+## I'm getting a `Permission denied` error when downloading/decrypting the tasks, and I'm on Linux/macOS
 
 __Issue:__
 
@@ -64,6 +64,19 @@ Get your user and group ID by running `id` in your terminal. You need to let Doc
             - ./competitions:/app/data/
         user: "1000:1000"
 ```
+
+## I'm getting `exec /docker-entrypoint.sh: exec format error` when running `npm start`
+
+__Issue:__
+
+You are likely trying to run the Docker container on an incompatible architecture.
+
+__Solution:__
+
+Make sure you are running the Docker container on a compatible architecture. Required images are available for both
+`amd64` and `arm64` architectures, hence this is not the original of the problem. 
+
+Try re-installing Docker and make sure you are using the correct version for your CPU architecture.
 
 ## Still having issues?
 
