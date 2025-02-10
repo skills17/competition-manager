@@ -2,7 +2,6 @@
 
 Competition environment for competitors.
 
-
 - Are you planning to take part in a competition in Web Technologies — Skill 17?
 - Did the organizers of the competition provide you with a link to this repository?
 
@@ -32,6 +31,7 @@ __Quick Start__:
 ```bash
 git clone git@github.com:skills17/competition-manager.git
 cd competition-manager
+docker compose pull --policy always
 docker compose up -d
 open http://localhost:9999
 ```
@@ -72,7 +72,7 @@ docker volume prune --a
 
 ### 2. Starting the environment
 
-1. Open a terminal and navigate to the directory of this repository.
+1. Open a terminal and navigate to the directory of this repository `cd competition-manager`.
 2. Run `docker compose up -d` to start the environment.
 3. Wait a few seconds and verify that the environment is healthy by running `docker ps`.
 
@@ -87,15 +87,20 @@ Hints:
 - If you get an error that the port is already in use, you might have another service running on port 9999. You need to
   stop that service or change the port in the `docker-compose.yaml` file.
 
-### 3. Fetching the competition tasks
+### 3. Download the competition files
 
-On the started server [http://localhost:9999](http://localhost:9999), you can fetch the tasks for the competition.
-Please do so before the competition starts. A hash is also provided to verify the integrity of the tasks. If the
-competition tasks are not yet available, please check again a few days before the competition starts.
+The competition files are distributed in the form of two bundles:
 
-The downloaded tasks are encrypted and can only be decrypted with a password provided by the organizers. You will be
-given the password at the start of the competition. This allows you to download the tasks in advance and start solving
-them as soon as the competition starts.
+- **Setup Bundle**: Contains the setup for the competition. This includes `package.json` and `composer.json` and setup 
+  scripts. This should be downloaded as preparation before the competition. The setup bundle has instructions on how to
+  set up the competition environment. Make sure to follow these instructions before the competition starts.
+- **Task Bundle**: Contains the tasks, code, and tests for the competition. This is encrypted and can only be decrypted 
+  with a password provided by the supervisor. You will be given the password at the start of the competition. If the
+  task bundle is not yet available, please check again a few days before the competition starts.
+
+Open [http://localhost:9999](http://localhost:9999) in your browser and select the competition, then click on 
+`Download Setup`. Once it is downloaded, the README button will appear. Follow the instructions in the README to set up
+the competition.
 
 ### 4. Decrypting the tasks
 

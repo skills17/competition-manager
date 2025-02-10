@@ -1,7 +1,6 @@
-version: '3'
 services:
   competition-manager:
-    image: skills17/competition-manager
+    image: skills17/competition-manager:latest
     restart: unless-stopped
     ports:
       - "127.0.0.1:9999:9999"

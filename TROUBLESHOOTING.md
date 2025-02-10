@@ -69,12 +69,12 @@ Get your user and group ID by running `id` in your terminal. You need to let Doc
 
 __Issue:__
 
-You are likely trying to run the Docker container on an incompatible architecture.
+You are likely trying to run the Docker container on an incompatible architecture for your CPU.
 
 __Solution:__
 
 Make sure you are running the Docker container on a compatible architecture. Required images are available for both
-`amd64` and `arm64` architectures, hence this is not the original of the problem. 
+`amd64` and `arm64` architectures, hence this is unlikely the origin of the problem. 
 
 Try re-installing Docker and make sure you are using the correct version for your CPU architecture.
 

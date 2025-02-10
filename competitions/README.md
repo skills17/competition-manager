@@ -9,7 +9,7 @@ Please follow the instructions here: [README.md](./README.md).
 You typically don't need to interact with this folder directly. If you have trouble with the tasks, please contact the
 organizers.
 
-The tasks are bundled, encrypted, decrypted and unbundled using the following commands:
+For reference, the competition tasks are bundled, encrypted, decrypted and unbundled using the following commands:
 
 ```bash
 # Tar and compress
