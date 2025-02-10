@@ -6,17 +6,5 @@
 
 ## Backlog
 
-### High Priority
-
-- Registration of competitor details within competition manager instead of competition
-- Allow downloading of competition with only secret parts encrypted. Things like `setup.js` and `package.json` can be
-  unencrypted. This would allow to set up the competition before the competition starts.
+- Do not require a rebuild of the readme once tasks are decrypted.
 - Add support for speed challenge tasks.
-
-### Low Priority
-
-- Synchronize work files with server for live evaluation
-
-## Before SwissSkills 2025
-
-TBD
