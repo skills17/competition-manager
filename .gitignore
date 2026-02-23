@@ -1,5 +1,6 @@
 competitions/downloaded/
 competitions/workspace/
+competitions/task-status/
 .code/
 .idea/
 *.iml
