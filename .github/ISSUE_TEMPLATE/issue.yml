@@ -43,5 +43,16 @@ body:
     id: logs
     attributes:
       label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      description: |
+        Please run the commands below and paste the output that shows the error.
+        This will be automatically formatted into code, so no need for backticks.
+      value: |
+        # Run from the project root:
+        docker compose ps
+        docker compose logs competition-manager
+        docker compose config
+
+        # If network/download issues are suspected:
+        docker compose exec competition-manager sh -c "env | grep -i proxy || true"
+        docker compose exec competition-manager sh -c "curl -v https://files.skills17.ch/competitions/competitions.json"
       render: shell
