@@ -1,5 +1,8 @@
 # Skill 17 - Competition Environment
 
+> [!IMPORTANT]
+> Having setup or runtime issues? Check [TROUBLESHOOTING.md](TROUBLESHOOTING.md) first.
+
 Competition environment for competitors.
 
 - Are you planning to take part in a competition in Web Technologies — Skill 17?
