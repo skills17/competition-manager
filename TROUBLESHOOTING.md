@@ -2,23 +2,53 @@
 
 Got an issue? Check if listed here.
 
-## When downloading, I get `ERROR: cannot verify files.skills17.ch's certificate`
+## localhost:9999 opens, but the page does not load / server error shows
 
 __Issue:__
 
-You are likely behind a corporate or school proxy. On corporate or school computers,
-this is often the case. If you are in a VPN, you might also be affected.
+The competition manager starts, but cannot download https://files.skills17.ch/competitions/competitions.json or other
+required remote files.
+
+Typical log output:
+
+```
+TypeError: fetch failed
+[cause]: AggregateError
+code: 'ETIMEDOUT'
+```
+
+Or when downloading, you get an error like this: `ERROR: cannot verify files.skills17.ch's certificate`.
+
+Cause:
+
+The Docker container cannot reach the Internet, or cannot reach the config host specifically. This is often caused by:
+
+- school/corporate firewall restrictions
+- proxy misconfiguration
+- VPN interference
+- DNS issues
+- blocked outbound HTTPS traffic
 
 __Solution:__
 
-We recommend to use a private computer, or turn off the VPN or Proxy.
+1. Test connectivity from inside the container:
 
-__Hint:__
+```shell
+docker compose logs competition-manager
+docker exec -it <container_name> sh
+curl -v https://files.skills17.ch/competitions/competitions.json
+```
 
-The proxy config is usually in the file `~/.docker/config`. You might have to remove the
-proxy settings from there.
+2. Check Docker proxy settings and environment variables:
 
-See [Docker documentation](https://docs.docker.com/network/proxy/) for more information.
+    - `~/.docker/config.json` (See [Docker documentation](https://docs.docker.com/network/proxy/) for more information)
+    - Docker Desktop proxy configuration
+    - `HTTP_PROXY`, `HTTPS_PROXY`, `NO_PROXY` check with `env | grep -i proxy`
+
+3. Disable VPN/proxy temporarily and retry.
+4. Try another network, such as a mobile hotspot or home connection.
+5. If you are on a school or corporate network, ask your administrator whether Docker containers are allowed outbound
+   HTTPS access.
 
 ## Container Fails to Start
 
@@ -52,16 +82,19 @@ This is required to run Node.js and PHP commands. Otherwise, you might encounter
 
 __Issue:__
 
-The user and group of your host and Docker container probably mismatch. Therefore, the Docker container user doesn't have the permission to write to your `competitions/` directory.
+The user and group of your host and Docker container probably mismatch. Therefore, the Docker container user doesn't
+have the permission to write to your `competitions/` directory.
 
 __Solution:__
 
-Get your user and group ID by running `id` in your terminal. You need to let Docker know about these IDs by adding them to the `docker-compose.yaml` file at the `competitions-manager` level. Replace `1000:1000` with your UID and GID respectively.
+Get your user and group ID by running `id` in your terminal. You need to let Docker know about these IDs by adding them
+to the `docker-compose.yaml` file at the `competitions-manager` level. Replace `1000:1000` with your UID and GID
+respectively.
 
 ```yml
         ...
         volumes:
-            - ./competitions:/app/data/
+          - ./competitions:/app/data/
         user: "1000:1000"
 ```
 
@@ -74,7 +107,7 @@ You are likely trying to run the Docker container on an incompatible architectur
 __Solution:__
 
 Make sure you are running the Docker container on a compatible architecture. Required images are available for both
-`amd64` and `arm64` architectures, hence this is unlikely the origin of the problem. 
+`amd64` and `arm64` architectures, hence this is unlikely the origin of the problem.
 
 Try re-installing Docker and make sure you are using the correct version for your CPU architecture.
 
