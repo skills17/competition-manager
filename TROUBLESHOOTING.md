@@ -141,3 +141,5 @@ docker compose up -d
    [Issues](https://github.com/skills17/competition-manager/issues?q=is%3Aissue)
 2. Open a new issue:
    [Create Issue](https://github.com/skills17/competition-manager/issues/new?template=issue.yml)
+3. Check the source code to debug your issue:
+   [competition-manager-web](https://github.com/skills17/competition-manager-web)
